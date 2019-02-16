@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+
+char **ft_split_whitespaces(char *str);
+
+int main()
+{
+    ft_split_whitespaces("Alexis,es,como,me,llamo");
+    return 0;
+}
+
+
+char **ft_split_whitespaces(char *str){
+    
+    char codam[] = "Hola\nMundo\t\t\tSeparado\nPor\nSaltos y tabulaciones.Alexis,es,como,me,llamo",
+    delimitador[] = " .,\n\t";
+    char *resultaat = strtok(codam, delimitador);
+    if(resultaat != NULL){
+        while(resultaat != NULL){
+            printf("Resultaat: %s\n", resultaat);
+            resultaat = strtok(NULL, delimitador);
+        }
+    }
+}
+
+//extraer los caracteres de un string y organizarlos en fila.
